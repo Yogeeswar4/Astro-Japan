@@ -1,0 +1,132 @@
+.zodiac-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #100e3a 0%, #1b1a40 100%);
+  font-family: 'Noto Serif JP', serif;
+  color: #fff;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.zodiac-title {
+  font-size: 3rem;
+  color: #ffd700;
+  text-shadow: 0 0 15px #ffd700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.zodiac-description {
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.zodiac-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  perspective: 1200px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/* Card base */
+.zodiac-card {
+  width: 280px;
+  height: 380px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 0 15px #5a33ff88;
+  background: linear-gradient(145deg, #2c2050, #3b2a7b);
+  user-select: none;
+}
+
+/* Hover: scale + center + flip */
+.zodiac-card:hover {
+  transform: scale(1.3) translateY(-15px) rotateY(180deg);
+  box-shadow: 0 0 40px #ffd700dd;
+  z-index: 999;
+}
+
+/* Front and back sides */
+.zodiac-front,
+.zodiac-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.zodiac-front {
+  background: linear-gradient(145deg, #2c2050, #3b2a7b);
+  justify-content: flex-start;
+}
+
+.zodiac-front img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 5px #8a2be2);
+  pointer-events: none;
+  user-select: none;
+}
+
+.zodiac-name {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffd700aa;
+}
+
+.zodiac-date, .zodiac-japanese {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 2px 0 8px;
+}
+
+/* Back side */
+.zodiac-back {
+  background: linear-gradient(135deg, #251d48, #3e2b7a);
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+  padding: 25px 30px;
+  color: #ffe066;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  box-shadow: inset 0 0 20px #ffd700aa;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .zodiac-card {
+    width: 90vw;
+    height: 350px;
+  }
+
+  .zodiac-front img {
+    width: 110px;
+    height: 110px;
+  }
+}

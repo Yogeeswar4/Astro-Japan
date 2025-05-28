@@ -1,0 +1,23 @@
+.footer {
+  background-color: #2e2e2e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+  transform: translateY(100%); /* hidden by default, moved down */
+  z-index: 1000;
+}
+
+.footer.visible {
+  transform: translateY(0); /* slide up and visible */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  user-select: none;
+}
