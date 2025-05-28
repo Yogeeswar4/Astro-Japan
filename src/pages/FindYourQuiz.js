@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 const zodiacSigns = [
   { name: "Aries", color: "#FF4E50", horoscope: "Aries are dynamic and full of energy. Their assertive nature makes them natural leaders, but they need to learn to be more patient and considerate." },
@@ -257,6 +257,40 @@ const FindYourQuiz = () => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+          div[style*="minHeight: 100vh"] {
+            padding: 15px !important;
+          }
+          h1 {
+            font-size: 1.8rem !important;
+            margin-bottom: 20px !important;
+          }
+          div[style*="maxWidth: 600px"] {
+            max-width: 95% !important;
+            padding: 30px 20px !important;
+          }
+          button {
+            padding: 12px 24px !important;
+            font-size: 1rem !important;
+            min-width: 100px !important;
+          }
+        }
+        @media (max-width: 400px) {
+          h1 {
+            font-size: 1.5rem !important;
+          }
+          button {
+            padding: 10px 20px !important;
+            font-size: 0.9rem !important;
+            min-width: 80px !important;
+          }
+          div[style*="maxWidth: 600px"] {
+            padding: 20px 15px !important;
+            font-size: 0.95rem !important;
           }
         }
       `}</style>
